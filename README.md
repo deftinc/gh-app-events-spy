@@ -1,24 +1,8 @@
-# README
+# Github App Events Spy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This creates a service that logs all Github events to elasticsearch to view in Kibana.
 
-Things you may want to cover:
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/deftinc/gh-app-events-spy/tree/master)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# LICENSE
+[MIT License](https://raw.githubusercontent.com/deftinc/gh-app-events-spy/master/LICENSE)
