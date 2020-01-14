@@ -12,7 +12,7 @@ class GithubWebhooksController < ApplicationController
 
   def payload
     {
-      event: request_headers["X-GitHub-Event"],
+      event: request_headers["HTTP_X_GITHUB_EVENT"],
       action: request_json["action"],
       headers: request_headers,
       payload: request_json,
