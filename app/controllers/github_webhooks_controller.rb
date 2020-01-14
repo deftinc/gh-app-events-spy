@@ -16,6 +16,7 @@ class GithubWebhooksController < ApplicationController
       action: request_json["action"],
       headers: request_headers,
       payload: request_json,
+      timestamp: Time.now.utc.iso8601,
     }
   end
 
