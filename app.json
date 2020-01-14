@@ -33,5 +33,8 @@
   "addons": [
     "bonsai:sandbox-6"
   ],
-  "success_url": "/welcome"
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "curl -X PUT $BONSAI_URL/github_events"
+  }
 }
