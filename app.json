@@ -1,0 +1,37 @@
+{
+  "name": "Github Apps Events Spy",
+  "description": "A barebones app to logout Github app events to kibana for analysis",
+  "repository": "https://github.com/deftinc/gh-app-events-spy",
+  "logo": "https://raw.githubusercontent.com/deftinc/gh-app-events-spy/master/public/github.png",
+  "keywords": ["github app", "rails", "logs"],
+  "env": {
+    "RAILS_MASTER_KEY": {
+      "generator": "secret"
+    },
+    "GITHUB_CLIENT_ID": {
+      "value": "#https://github.com/settings/apps/new"
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "value": "#https://github.com/settings/apps/new"
+    },
+    "GITHUB_APP_ID": {
+      "value": "#https://github.com/settings/apps/new"
+    },
+    "GITHUB_APP_KEY": {
+      "value": "#https://github.com/settings/apps/new"
+    },
+    "GITHUB_WEBHOOK_SECRET": {
+      "value": "#https://github.com/settings/apps/new"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "bonsai:sandbox-6"
+  ],
+  "success_url": "/welcome"
+}
