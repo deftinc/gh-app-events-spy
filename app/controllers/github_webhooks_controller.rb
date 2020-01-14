@@ -5,19 +5,26 @@ class GithubWebhooksController < ApplicationController
   before_action -> { head :unauthorized unless Rack::Utils.secure_compare(signature, expected_signature) }
 
   def handle
-    client.index(index: 'github_events', body: payload)
-    render plain: 'Thanks, GitHub!'
+    render json: client.index(index: 'github_events', body: payload)
   end
 
   private
 
   def payload
     {
-      event: request.headers["X-GitHub-Event"],
-      action: params["action"],
-      headers: request.headers,
-      payload: params,
+      event: request_headers["X-GitHub-Event"],
+      action: request_json["action"],
+      headers: request_headers,
+      payload: request_json,
     }
+  end
+
+  def request_json
+    @request_json ||= JSON.parse(request.headers["RAW_POST_DATA"])
+  end
+
+  def request_headers
+    @request_headers ||= Hash[request.headers.select{|key, value| key =~ /[A-Z]+.*/ && key != "RAW_POST_DATA" }]
   end
 
   def client
