@@ -8,6 +8,9 @@
     "RAILS_MASTER_KEY": {
       "generator": "secret"
     },
+    "GITHUB_WEBHOOK_SECRET": {
+      "generator": "secret"
+    },
     "GITHUB_CLIENT_ID": {
       "value": "#https://github.com/settings/apps/new"
     },
@@ -18,9 +21,6 @@
       "value": "#https://github.com/settings/apps/new"
     },
     "GITHUB_APP_KEY": {
-      "value": "#https://github.com/settings/apps/new"
-    },
-    "GITHUB_WEBHOOK_SECRET": {
       "value": "#https://github.com/settings/apps/new"
     }
   },
