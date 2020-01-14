@@ -14,9 +14,9 @@ class GithubWebhooksController < ApplicationController
   def payload
     {
       event: request.headers["X-GitHub-Event"],
-      action: request.body["action"],
+      action: params["action"],
       headers: request.headers,
-      payload: request.body,
+      payload: params,
     }
   end
 
